@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Management System</h1>
+
+        <!-- Add/Update Form -->
+        <div class="card">
+            <h2 id="form-title">Add Student</h2>
+            <form id="student-form">
+                <input type="hidden" id="student-index" value="-1">
+                <div class="input-group">
+                    <label for="student-id">ID:</label>
+                    <input type="number" id="student-id" required>
+                </div>
+                <div class="input-group">
+                    <label for="student-name">Name:</label>
+                    <input type="text" id="student-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="student-marks">Marks:</label>
+                    <input type="number" id="student-marks" required>
+                </div>
+                <button type="submit" id="submit-btn" class="btn primary">Add Student</button>
+            </form>
+        </div>
+
+        <!-- Search & Controls -->
+        <div class="controls">
+            <input type="text" id="search-box" placeholder="Search by name or ID..." onkeyup="searchStudents()">
+        </div>
+
+        <!-- Display Table -->
+        <div class="card">
+            <h2>Student Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="student-table-body">
+                    <!-- Dynamic rows go here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
